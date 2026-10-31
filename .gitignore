@@ -87,3 +87,5 @@ out.bin
 .zscripts/*.js
 .zscripts/*.ts
 .zscripts/
+
+.agents/

@@ -21,6 +21,7 @@ function VideoVisual({ post, segment }: { post: HomePost; segment: number }) {
       alt={post.imageAlt}
       ratio="auto"
       category={post.categoryKey}
+      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
       className="!w-full !h-full absolute inset-0"
     />
   );

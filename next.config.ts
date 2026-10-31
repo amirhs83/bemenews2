@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const isDev = process.env.NODE_ENV !== "production";
 
@@ -48,22 +49,42 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
   reactStrictMode: false,
+  compiler: {
+    removeConsole: process.env.NODE_ENV === "production" ? { exclude: ["error", "warn"] } : false,
+  },
   images: {
+    formats: ["image/avif", "image/webp"],
+    minimumCacheTTL: 2592000,
+    deviceSizes: [360, 420, 640, 750, 828, 1080, 1200, 1440, 1920],
+    imageSizes: [16, 32, 48, 64, 96, 128, 160, 200, 256, 320, 384],
     remotePatterns: [
       { protocol: "https", hostname: "picsum.photos" },
       { protocol: "https", hostname: "**.public.blob.vercel-storage.com" },
       { protocol: "https", hostname: "c267562.parspack.net" },
       { protocol: "https", hostname: "**.parspack.net" },
+      { protocol: "https", hostname: "bimenews.com" },
     ],
+  },
+  turbopack: {
+    root: path.resolve(__dirname),
   },
   experimental: {
     // admin video uploads can be up to 100MB (multipart overhead included)
     proxyClientMaxBodySize: "120mb",
-    // avoid recurring Turbopack cache corruption on this Windows dev machine
     turbopackFileSystemCacheForDev: false,
+    optimizePackageImports: ["lucide-react", "date-fns"],
   },
   async headers() {
     return [
+      {
+        source: "/:all*(svg|jpg|jpeg|png|webp|avif|gif|ico|woff|woff2)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
       {
         source: "/:path*",
         headers: securityHeaders,

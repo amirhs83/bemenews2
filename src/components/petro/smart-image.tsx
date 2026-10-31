@@ -23,17 +23,13 @@ const ratioClasses: Record<Ratio, string> = {
   auto: "",
 };
 
-const DEFAULT_SIZES = "(max-width: 768px) 100vw, (max-width: 1440px) 50vw, 800px";
+const DEFAULT_SIZES = "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 680px";
 
 /**
  * SmartImage - resilient image with multi-tier fallback (next/image optimized)
  * 1. Try the provided src (remote)
  * 2. Fall back to picsum.photos with a category-specific seed (always works)
  * 3. Final fallback to local branded SVG placeholder
- *
- * Implementation note: we use a `key` prop on the inner image bound to the
- * incoming src, so React automatically remounts it (and thus resets the
- * internal fallback stage) whenever the src prop changes — no useEffect needed.
  */
 function ImageWithFallback({
   src,
@@ -70,7 +66,7 @@ function ImageWithFallback({
       priority={priority || eager}
       onLoad={onLoad}
       onError={handleError}
-      className="w-full h-full object-cover transition-all duration-700"
+      className="w-full h-full object-cover transition-transform duration-300"
     />
   );
 }
@@ -96,19 +92,19 @@ export default function SmartImage({
   const svgFallback = `/placeholders/${category}-16x9.svg`;
   const initialSrc = src || picsumUrl;
 
-  const [loaded, setLoaded] = useState(false);
+  const [loaded, setLoaded] = useState(priority);
 
   // Use src as key so the inner component remounts when src changes
   return (
     <div
       className={`relative overflow-hidden bg-zinc-100 ${ratioClasses[ratio]} ${className}`}
     >
-      {!loaded && (
+      {!loaded && !priority && (
         <div className="absolute inset-0 bg-gradient-to-br from-zinc-200 via-zinc-100 to-zinc-200 animate-pulse" />
       )}
       <div
-        className={`w-full h-full transition-all duration-700 ${
-          loaded ? "opacity-100 scale-100" : "opacity-0 scale-105"
+        className={`w-full h-full transition-opacity duration-300 ${
+          loaded || priority ? "opacity-100" : "opacity-0"
         }`}
       >
         <ImageWithFallback

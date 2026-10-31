@@ -50,6 +50,7 @@ export default function MultimediaSection({ items }: { items: HomePost[] }) {
                 alt={featured.imageAlt}
                 ratio="auto"
                 category="reports"
+                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 600px"
                 className="!w-full !h-full"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent pointer-events-none"></div>
@@ -82,6 +83,7 @@ export default function MultimediaSection({ items }: { items: HomePost[] }) {
                     alt={p!.imageAlt}
                     ratio="auto"
                     category="reports"
+                    sizes="(max-width: 640px) 96px, 160px"
                     className="!w-full !h-full"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent pointer-events-none"></div>
@@ -108,6 +110,7 @@ export default function MultimediaSection({ items }: { items: HomePost[] }) {
                       src={videoTile.videoUrl}
                       start={4}
                       segment={8}
+                      poster={videoTile.imageUrl}
                       className="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                     />
                   ) : (
@@ -116,6 +119,7 @@ export default function MultimediaSection({ items }: { items: HomePost[] }) {
                       alt={videoTile.imageAlt}
                       ratio="auto"
                       category="video"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 350px"
                       className="!w-full !h-full"
                     />
                   )}
@@ -146,6 +150,7 @@ export default function MultimediaSection({ items }: { items: HomePost[] }) {
                     alt={p4.imageAlt}
                     ratio="auto"
                     category="reports"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 350px"
                     className="!w-full !h-full"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent pointer-events-none"></div>
@@ -170,12 +175,13 @@ export default function MultimediaSection({ items }: { items: HomePost[] }) {
                 className="block relative overflow-hidden rounded-xl group aspect-[16/7] bg-zinc-200"
               >
                 <SmartImage
-                  src={p.imageUrl}
-                  alt={p.imageAlt}
-                  ratio="auto"
-                  category="reports"
-                  className="!w-full !h-full"
-                />
+                src={p.imageUrl}
+                alt={p.imageAlt}
+                ratio="auto"
+                category="reports"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 500px"
+                className="!w-full !h-full"
+              />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none"></div>
                 <div className="absolute top-3 right-3 bg-black/50 backdrop-blur-sm text-white p-1.5 rounded-full">
                   <Camera className="w-3.5 h-3.5" />

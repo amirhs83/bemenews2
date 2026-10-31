@@ -41,6 +41,7 @@ export default function TopNewsStrip({ breaking, hero }: Props) {
                       alt={item.imageAlt}
                       ratio="auto"
                       category={item.categoryKey}
+                      sizes="(max-width: 640px) 80px, 96px"
                       className="!w-full !h-full"
                     />
                   </div>
@@ -77,6 +78,7 @@ export default function TopNewsStrip({ breaking, hero }: Props) {
                   ratio="auto"
                   category={hero.categoryKey}
                   priority
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 640px"
                   className="!w-full !h-full"
                 />
                 {/* Stronger gradient on mobile for better text legibility */}

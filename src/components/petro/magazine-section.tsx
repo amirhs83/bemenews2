@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import type { HomePost } from "@/lib/home-data";
 import { faDateLong } from "@/lib/post-format";
@@ -21,17 +22,23 @@ export default function MagazineSection({
             <div className="lg:col-span-4 xl:col-span-3 flex justify-center lg:justify-start">
               <a href={headline?.href ?? "#"} className="block group">
                 {headline?.imageUrl ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
+                  <Image
                     src={headline.imageUrl}
-                    alt={headline.imageAlt}
+                    alt={headline.imageAlt || "جلد ماهنامه بیمه نیوز"}
+                    width={420}
+                    height={630}
+                    sizes="(max-width: 640px) 240px, (max-width: 1024px) 288px, 420px"
+                    quality={80}
                     className="w-60 sm:w-72 lg:w-full h-auto shadow-[0_25px_50px_-12px_rgba(0,0,0,0.35)] group-hover:shadow-[0_30px_60px_-12px_rgba(0,0,0,0.45)] group-hover:-translate-y-1 transition-all duration-300"
                   />
                 ) : (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
+                  <Image
                     src="/magazine-cover.png"
                     alt="جلد ماهنامه بیمه نیوز - شماره ماهانه"
+                    width={420}
+                    height={630}
+                    sizes="(max-width: 640px) 240px, (max-width: 1024px) 288px, 420px"
+                    quality={80}
                     className="w-60 sm:w-72 lg:w-full h-auto shadow-[0_25px_50px_-12px_rgba(0,0,0,0.35)] group-hover:shadow-[0_30px_60px_-12px_rgba(0,0,0,0.45)] group-hover:-translate-y-1 transition-all duration-300"
                   />
                 )}

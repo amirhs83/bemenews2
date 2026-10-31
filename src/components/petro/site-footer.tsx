@@ -1,9 +1,11 @@
+import React from "react";
+import Image from "next/image";
 import { socialLinks } from "@/lib/news-data";
 import { db } from "@/lib/db";
 import { Mail, Phone, MapPin, ArrowLeft, Send } from "lucide-react";
 
 function SocialIcon({ name, className = "w-4 h-4" }: { name: string; className?: string }) {
-  const icons: Record<string, JSX.Element> = {
+  const icons: Record<string, React.ReactNode> = {
     twitter: (
       <svg viewBox="0 0 24 24" className={className} fill="currentColor">
         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -39,10 +41,15 @@ function SocialIcon({ name, className = "w-4 h-4" }: { name: string; className?:
 }
 
 export default async function SiteFooter() {
-  const footerCategories = await db.category.findMany({
-    orderBy: [{ order: "asc" }, { name: "asc" }],
-    take: 10,
-  });
+  let footerCategories: any[] = [];
+  try {
+    footerCategories = await db.category.findMany({
+      orderBy: [{ order: "asc" }, { name: "asc" }],
+      take: 10,
+    });
+  } catch {
+    // Build-time / offline fallback
+  }
 
   return (
     <footer className="mt-auto bg-petro-black text-zinc-300 border-t-4 border-blue-700 relative overflow-hidden">
@@ -88,11 +95,7 @@ export default async function SiteFooter() {
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-8">
           {/* About - spans 2 cols on mobile */}
           <div className="lg:col-span-4 col-span-2">
-            <img
-              src="/bimenews-logo-white.png"
-              alt="بیمه نیوز - BimeNews"
-              className="h-12 sm:h-14 w-auto mb-3 sm:mb-4"
-            />
+            <Image src="/bimenews-logo-white.png" alt="بیمه نیوز - BimeNews" width={156} height={84} loading="lazy" className="h-12 sm:h-14 w-auto mb-3 sm:mb-4" />
             <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-4 sm:mb-5">
               بیمه نیوز، پایگاه تخصصی اخبار و تحلیل صنعت بیمه ایران و جهان است
               که با هدف اطلاع‌رسانی دقیق و به‌موقع در حوزه بازار بیمه،

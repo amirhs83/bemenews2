@@ -58,37 +58,49 @@ const publishedWhere = () => ({
 
 /** Posts placed in a homepage section, ordered by their position. */
 export async function getHomeSectionPosts(key: string): Promise<HomePost[]> {
-  const placements = await db.sectionPlacement.findMany({
-    where: {
-      section: { key },
-      post: publishedWhere(),
-    },
-    orderBy: { position: "asc" },
-    include: { post: { include: postInclude } },
-  });
-  return placements.map((pl) => toHomePost(pl.post));
+  try {
+    const placements = await db.sectionPlacement.findMany({
+      where: {
+        section: { key },
+        post: publishedWhere(),
+      },
+      orderBy: { position: "asc" },
+      include: { post: { include: postInclude } },
+    });
+    return placements.map((pl) => toHomePost(pl.post));
+  } catch {
+    return [];
+  }
 }
 
 /** "آخرین مقالات" — automatic, newest first. */
 export async function getLatestPosts(limit = 4): Promise<HomePost[]> {
-  const posts = await db.post.findMany({
-    where: publishedWhere(),
-    orderBy: { publishedAt: "desc" },
-    take: limit,
-    include: postInclude,
-  });
-  return posts.map(toHomePost);
+  try {
+    const posts = await db.post.findMany({
+      where: publishedWhere(),
+      orderBy: { publishedAt: "desc" },
+      take: limit,
+      include: postInclude,
+    });
+    return posts.map(toHomePost);
+  } catch {
+    return [];
+  }
 }
 
 /** "پربازدیدترین" — automatic, by view counter. */
 export async function getMostViewedPosts(limit = 5): Promise<HomePost[]> {
-  const posts = await db.post.findMany({
-    where: publishedWhere(),
-    orderBy: [{ views: "desc" }, { publishedAt: "desc" }],
-    take: limit,
-    include: postInclude,
-  });
-  return posts.map(toHomePost);
+  try {
+    const posts = await db.post.findMany({
+      where: publishedWhere(),
+      orderBy: [{ views: "desc" }, { publishedAt: "desc" }],
+      take: limit,
+      include: postInclude,
+    });
+    return posts.map(toHomePost);
+  } catch {
+    return [];
+  }
 }
 
 export interface NavItem {
@@ -99,11 +111,15 @@ export interface NavItem {
 
 /** Navigation items: home + all categories (admin-managed order). */
 export async function getNavCategories(): Promise<NavItem[]> {
-  const cats = await db.category.findMany({
-    orderBy: [{ order: "asc" }, { name: "asc" }],
-  });
-  return [
-    { label: "صفحه اصلی", href: "/", hot: true },
-    ...cats.map((c) => ({ label: c.name, href: `/category/${c.slug}` })),
-  ];
+  try {
+    const cats = await db.category.findMany({
+      orderBy: [{ order: "asc" }, { name: "asc" }],
+    });
+    return [
+      { label: "صفحه اصلی", href: "/", hot: true },
+      ...cats.map((c) => ({ label: c.name, href: `/category/${c.slug}` })),
+    ];
+  } catch {
+    return [{ label: "صفحه اصلی", href: "/", hot: true }];
+  }
 }

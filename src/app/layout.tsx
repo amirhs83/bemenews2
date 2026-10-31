@@ -1,12 +1,7 @@
 export const dynamic = "force-dynamic";
 
 import type { Metadata } from "next";
-import "@fontsource/vazirmatn/400.css";
-import "@fontsource/vazirmatn/500.css";
-import "@fontsource/vazirmatn/600.css";
-import "@fontsource/vazirmatn/700.css";
-import "@fontsource/vazirmatn/800.css";
-import "@fontsource/vazirmatn/900.css";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import {
@@ -18,6 +13,44 @@ import {
   siteTagline,
   siteUrl,
 } from "@/lib/site";
+
+const vazirmatn = localFont({
+  src: [
+    {
+      path: "./fonts/vazirmatn-arabic-400-normal.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/vazirmatn-arabic-500-normal.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/vazirmatn-arabic-600-normal.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "./fonts/vazirmatn-arabic-700-normal.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./fonts/vazirmatn-arabic-800-normal.woff2",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "./fonts/vazirmatn-arabic-900-normal.woff2",
+      weight: "900",
+      style: "normal",
+    },
+  ],
+  variable: "--font-vazir",
+  display: "swap",
+  adjustFontFallback: "Arial",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -55,8 +88,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fa" dir="rtl" suppressHydrationWarning>
-      <body className="font-vazir antialiased bg-white text-zinc-900 min-h-screen flex flex-col">
+    <html lang="fa" dir="rtl" suppressHydrationWarning className={vazirmatn.variable}>
+      <body className={`${vazirmatn.className} font-vazir antialiased bg-white text-zinc-900 min-h-screen flex flex-col`}>
         {children}
         <Toaster />
       </body>

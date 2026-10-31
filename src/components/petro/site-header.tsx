@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import { useState, useEffect } from "react";
 import { Menu, Search, X, ChevronDown, Bell, Globe } from "lucide-react";
 import { utilityLinks } from "@/lib/news-data";
@@ -90,11 +92,7 @@ export default function SiteHeader({ navItems }: { navItems?: NavItem[] }) {
             </div>
             <a href="/" className="flex items-center group">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/bimenews-logo-white-header.png"
-                alt="بیمه نیوز - BimeNews"
-                className="h-10 w-auto transition-transform group-hover:scale-[1.02]"
-              />
+              <Image src="/bimenews-logo-white-header.png" alt="بیمه نیوز - BimeNews" width={130} height={70} priority className="h-10 w-auto transition-transform group-hover:scale-[1.02]" />
             </a>
           </div>
 
@@ -105,13 +103,7 @@ export default function SiteHeader({ navItems }: { navItems?: NavItem[] }) {
               <a href="/" className="flex items-center gap-2 sm:gap-3 group min-w-0">
                 <div className="relative flex-shrink-0 flex items-center">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/bimenews-logo-white-header.png"
-                    alt="بیمه نیوز - BimeNews"
-                    className="h-7 sm:h-9 md:h-10 w-auto transition-transform group-hover:scale-[1.02]"
-                    width={63}
-                    height={34}
-                  />
+                  <Image src="/bimenews-logo-white-header.png" alt="بیمه نیوز - BimeNews" width={130} height={70} priority className="h-7 sm:h-9 md:h-10 w-auto transition-transform group-hover:scale-[1.02]" />
                 </div>
                 <div className="hidden md:flex flex-col text-[9px] uppercase tracking-[0.25em] text-zinc-500 border-r border-zinc-800 pr-3 mr-1 leading-tight">
                   <span>پایگاه خبری</span>
@@ -209,11 +201,7 @@ export default function SiteHeader({ navItems }: { navItems?: NavItem[] }) {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="bg-petro-black text-white p-5 flex items-center justify-between">
-              <img
-                src="/bimenews-logo-white-header.png"
-                alt="بیمه نیوز - BimeNews"
-                className="h-8 w-auto"
-              />
+              <Image src="/bimenews-logo-white-header.png" alt="بیمه نیوز - BimeNews" width={130} height={70} className="h-8 w-auto" />
               <button
                 onClick={() => setMobileOpen(false)}
                 className="p-1.5 hover:bg-zinc-800 rounded-md transition-colors"

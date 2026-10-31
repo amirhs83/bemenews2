@@ -65,7 +65,7 @@ export default function LatestArticlesSection({ items }: { items: HomePost[] }) 
                   alt={article.imageAlt}
                   ratio="auto"
                   category={article.categoryKey}
-                  eager
+                  sizes="(max-width: 640px) 96px, (max-width: 1024px) 50vw, 300px"
                   className="!w-full !h-full"
                 />
                 <div className="absolute top-1.5 right-1.5 sm:top-2 sm:right-2">
