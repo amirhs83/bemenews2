@@ -52,7 +52,7 @@ export default function VideoPreview({
           }
         });
       },
-      { rootMargin: "200px" }
+      { rootMargin: "50px" }
     );
 
     observer.observe(el);

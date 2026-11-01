@@ -4,6 +4,6 @@
   "platform": "node",
   "build": {
     "location": "iran",
-    "cache": true
+    "cache": false
   }
 }
