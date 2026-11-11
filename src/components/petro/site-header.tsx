@@ -148,48 +148,6 @@ export default function SiteHeader({ navItems }: { navItems?: NavItem[] }) {
         </div>
       </div>
 
-      {/* Primary navigation */}
-      <nav className={`bg-white border-b border-zinc-200 transition-all duration-300 ${scrolled ? "shadow-md" : "shadow-sm"}`}>
-        <div className="max-w-[1440px] mx-auto px-4 lg:px-6">
-          <ul className="hidden lg:flex items-center h-12 text-sm">
-            {navLinks.map((link, i) => (
-              <li key={i}>
-                <a
-                  href={link.href}
-                  className={`nav-link inline-flex items-center gap-1.5 px-4 py-2 font-medium transition-colors ${
-                    i === 0
-                      ? "text-blue-700 active"
-                      : "text-zinc-700 hover:text-blue-700"
-                  }`}
-                >
-                  {link.label}
-                  {link.hot && (
-                    <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
-                  )}
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          {/* Mobile nav */}
-          <div className="lg:hidden flex items-center h-12 overflow-x-auto scrollbar-hidden gap-1">
-            {navLinks.map((link, i) => (
-              <a
-                key={i}
-                href={link.href}
-                className={`whitespace-nowrap px-3 py-1 text-sm font-medium rounded-md ${
-                  i === 0
-                    ? "text-blue-700 bg-blue-50"
-                    : "text-zinc-700 hover:bg-zinc-100"
-                }`}
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
-        </div>
-      </nav>
-
       {/* Mobile drawer */}
       {mobileOpen && (
         <div
