@@ -22,7 +22,7 @@ export default function EconomyNewsSection({ items, mostViewed }: Props) {
                   <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 </div>
                 <div>
-                  <h2 className="section-heading text-xl sm:text-2xl md:text-3xl font-black uppercase tracking-tight">
+                  <h2 className="section-heading text-xl sm:text-2xl md:text-3xl font-bold uppercase">
                     بازار بیمه
                   </h2>
                 </div>
@@ -44,7 +44,7 @@ export default function EconomyNewsSection({ items, mostViewed }: Props) {
                   className="flex gap-3 sm:gap-4 py-4 sm:py-5 group hover:bg-white rounded-lg -mx-2 px-2 transition-all"
                 >
                   <div className="hidden md:flex flex-col items-center pt-1 w-10 flex-shrink-0">
-                    <span className="text-3xl font-black text-zinc-200 group-hover:text-blue-600 transition-colors leading-none tabular-nums">
+                    <span className="text-3xl font-bold text-zinc-200 group-hover:text-blue-600 transition-colors leading-none tabular-nums">
                       {faDigits(idx + 1)}
                     </span>
                     <div className="w-8 h-px bg-zinc-200 group-hover:bg-blue-600 group-hover:w-10 transition-all mt-1"></div>
@@ -82,7 +82,7 @@ export default function EconomyNewsSection({ items, mostViewed }: Props) {
                 <div className="w-7 h-7 rounded-md bg-orange-500/20 flex items-center justify-center">
                   <Flame className="w-4 h-4 text-orange-400" />
                 </div>
-                <h3 className="font-bold text-sm uppercase tracking-wider">
+                <h3 className="font-bold text-sm uppercase">
                   پربازدیدترین
                 </h3>
                 <span className="text-[10px] text-zinc-400 mr-auto">همه زمان‌ها</span>
@@ -94,7 +94,7 @@ export default function EconomyNewsSection({ items, mostViewed }: Props) {
                     href={item.href ?? "#"}
                     className="flex items-center gap-3 px-3 sm:px-4 py-2.5 sm:py-3 group hover:bg-zinc-50 transition-colors"
                   >
-                    <span className="text-xl sm:text-2xl font-black text-zinc-200 group-hover:text-blue-600 transition-colors w-6 sm:w-7 flex-shrink-0 tabular-nums">
+                    <span className="text-xl sm:text-2xl font-bold text-zinc-200 group-hover:text-blue-600 transition-colors w-6 sm:w-7 flex-shrink-0 tabular-nums">
                       {faDigits(idx + 1)}
                     </span>
                     <div className="flex-1 min-w-0">

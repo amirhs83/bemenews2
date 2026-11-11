@@ -202,7 +202,7 @@ export default async function NewsPage({ params }: Params) {
                 {post.kicker}
               </div>
             )}
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black leading-[1.4] text-zinc-950 mb-4">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-[1.4] text-zinc-950 mb-4">
               {post.title}
             </h1>
             <p className="text-base sm:text-lg text-zinc-600 leading-relaxed mb-5">
@@ -327,7 +327,7 @@ export default async function NewsPage({ params }: Params) {
         {related.length > 0 && (
           <section className="max-w-[1440px] mx-auto px-4 lg:px-6 pb-10">
             <div className="border-b-2 border-petro-black pb-2 mb-5 flex items-end justify-between">
-              <h2 className="section-heading text-xl sm:text-2xl font-black tracking-tight">
+              <h2 className="section-heading text-xl sm:text-2xl font-bold">
                 اخبار مرتبط
               </h2>
               <Link

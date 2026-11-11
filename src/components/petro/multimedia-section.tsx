@@ -24,7 +24,7 @@ export default function MultimediaSection({ items }: { items: HomePost[] }) {
             <span className="w-9 h-9 rounded-lg bg-petro-black text-white flex items-center justify-center">
               <Camera className="w-4.5 h-4.5" />
             </span>
-            <h2 className="section-heading text-2xl md:text-3xl font-black tracking-tight">
+            <h2 className="section-heading text-2xl md:text-3xl font-bold">
               عکس و فیلم
             </h2>
           </div>
@@ -54,7 +54,7 @@ export default function MultimediaSection({ items }: { items: HomePost[] }) {
                 className="!w-full !h-full"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent pointer-events-none"></div>
-              <div className="absolute top-3 right-3 bg-red-600 text-white text-[9px] sm:text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider flex items-center gap-1.5">
+              <div className="absolute top-3 right-3 bg-red-600 text-white text-[9px] sm:text-[10px] font-bold px-2 py-1 rounded uppercase flex items-center gap-1.5">
                 <Camera className="w-3 h-3" />
                 گزارش تصویری
               </div>

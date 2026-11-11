@@ -55,7 +55,7 @@ export default function LatestVideosSection({ videos }: { videos: HomePost[] }) 
           <div className="flex items-center gap-2 sm:gap-3">
             <div className="w-1 h-8 sm:h-12 bg-gradient-to-b from-blue-400 via-blue-600 to-blue-800 rounded-full shadow-[0_0_20px_rgba(59,130,246,0.6)]"></div>
             <div>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-black uppercase tracking-tight leading-none bg-gradient-to-l from-white to-zinc-400 bg-clip-text text-transparent">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold uppercase leading-none bg-gradient-to-l from-white to-zinc-400 bg-clip-text text-transparent">
                 ویدئو
               </h2>
               <span className="text-[10px] sm:text-xs mt-1 sm:mt-1.5 block flex items-center gap-1.5">
@@ -106,7 +106,7 @@ export default function LatestVideosSection({ videos }: { videos: HomePost[] }) 
 
               <div className="absolute bottom-0 right-0 left-0 p-4 sm:p-6">
                 <div className="flex items-center gap-1.5 sm:gap-2 mb-2 sm:mb-3 text-[10px] sm:text-[11px] text-zinc-300 flex-wrap">
-                  <span className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-2 sm:px-2.5 py-0.5 sm:py-1 font-bold rounded text-[9px] sm:text-[10px] uppercase tracking-wider flex items-center gap-1.5 shadow-lg">
+                  <span className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-2 sm:px-2.5 py-0.5 sm:py-1 font-bold rounded text-[9px] sm:text-[10px] uppercase flex items-center gap-1.5 shadow-lg">
                     <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
                     جدیدترین
                   </span>

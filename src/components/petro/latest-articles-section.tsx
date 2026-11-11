@@ -37,7 +37,7 @@ export default function LatestArticlesSection({ items }: { items: HomePost[] }) 
         <>
         <div className="border-b-2 border-petro-black pb-2 mb-5 sm:mb-6 flex items-end justify-between relative">
           <div className="flex items-end gap-2 sm:gap-3">
-            <h2 className="section-heading text-xl sm:text-2xl md:text-3xl font-black uppercase tracking-tight">
+            <h2 className="section-heading text-xl sm:text-2xl md:text-3xl font-bold uppercase">
               آخرین مقالات
             </h2>
           </div>
@@ -69,7 +69,7 @@ export default function LatestArticlesSection({ items }: { items: HomePost[] }) 
                   className="!w-full !h-full"
                 />
                 <div className="absolute top-1.5 right-1.5 sm:top-2 sm:right-2">
-                  <span className="bg-black/80 backdrop-blur-md text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 uppercase tracking-wider rounded inline-flex items-center gap-1">
+                  <span className="bg-black/80 backdrop-blur-md text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 uppercase rounded inline-flex items-center gap-1">
                     <Tag className="w-2.5 h-2.5" />
                     {article.category}
                   </span>

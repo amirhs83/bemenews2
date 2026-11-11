@@ -125,7 +125,7 @@ export default async function SiteFooter() {
 
           {/* Categories */}
           <div className="lg:col-span-2">
-            <h4 className="text-white font-bold mb-3 sm:mb-4 text-xs sm:text-sm uppercase tracking-wider border-b border-zinc-800 pb-2 flex items-center gap-2">
+            <h4 className="text-white font-bold mb-3 sm:mb-4 text-xs sm:text-sm uppercase border-b border-zinc-800 pb-2 flex items-center gap-2">
               <span className="w-1 h-4 bg-blue-500 rounded-full"></span>
               دسته‌بندی‌ها
             </h4>
@@ -146,7 +146,7 @@ export default async function SiteFooter() {
 
           {/* Quick links */}
           <div className="lg:col-span-2">
-            <h4 className="text-white font-bold mb-3 sm:mb-4 text-xs sm:text-sm uppercase tracking-wider border-b border-zinc-800 pb-2 flex items-center gap-2">
+            <h4 className="text-white font-bold mb-3 sm:mb-4 text-xs sm:text-sm uppercase border-b border-zinc-800 pb-2 flex items-center gap-2">
               <span className="w-1 h-4 bg-blue-500 rounded-full"></span>
               دسترسی سریع
             </h4>
@@ -173,7 +173,7 @@ export default async function SiteFooter() {
           {/* Social - spans 2 cols on mobile */}
           <div className="lg:col-span-4 col-span-2">
             <div className="mt-0">
-              <h4 className="text-white font-bold mb-3 text-xs sm:text-sm uppercase tracking-wider border-b border-zinc-800 pb-2 flex items-center gap-2">
+              <h4 className="text-white font-bold mb-3 text-xs sm:text-sm uppercase border-b border-zinc-800 pb-2 flex items-center gap-2">
                 <span className="w-1 h-4 bg-blue-500 rounded-full"></span>
                 ما را دنبال کنید
               </h4>

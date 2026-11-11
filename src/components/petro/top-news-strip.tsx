@@ -66,11 +66,11 @@ export default function TopNewsStrip({ breaking, hero }: Props) {
           {hero && (
             <div className="lg:col-span-6 order-1 lg:order-2">
               {/* Hero card — white reference card on ALL breakpoints.
-                  Same site font (Vazirmatn), reference type scale,
+                  Same site font (IRANSans), reference type scale,
                   inset photo with sharp 90° corners. */}
               <a
                 href={hero.href ?? "#"}
-                className="flex relative flex-col overflow-hidden rounded-[14px] border border-[#ECECF0] bg-white font-vazir"
+                className="flex relative flex-col overflow-hidden rounded-[14px] border border-[#ECECF0] bg-white"
               >
                 {/* Photo — inset inside the card, sharp 90° corners */}
                 <div className="p-2.5 sm:p-3 shrink-0">
