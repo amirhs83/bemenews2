@@ -121,7 +121,7 @@ export default function CommodityTicker() {
       <div className="max-w-[1440px] mx-auto px-4 lg:px-6">
         <div className="flex items-stretch">
           {/* Right label - sticky */}
-          <div className="flex items-center gap-2 flex-shrink-0 pl-4 py-2.5 border-l border-zinc-200">
+          <div className="flex items-center gap-2 flex-shrink-0 pl-4 py-1.5 border-l border-zinc-200">
             <div className="w-7 h-7 rounded-md bg-gradient-to-br from-zinc-900 to-petro-black flex items-center justify-center">
               <Activity className="w-3.5 h-3.5 text-blue-400" />
             </div>
@@ -136,7 +136,7 @@ export default function CommodityTicker() {
 
           {/* Scrolling prices */}
           <div
-            className={`flex-1 overflow-hidden relative py-2.5 select-none ${
+            className={`flex-1 overflow-hidden relative py-1.5 select-none ${
               dragging ? "cursor-grabbing" : "cursor-grab"
             }`}
             style={{ touchAction: "pan-y" }}
@@ -192,7 +192,7 @@ export default function CommodityTicker() {
           </div>
 
           {/* Left: live time */}
-          <div className="hidden md:flex items-center gap-2 flex-shrink-0 pr-4 py-2.5 border-r border-zinc-200">
+          <div className="hidden md:flex items-center gap-2 flex-shrink-0 pr-4 py-1.5 border-r border-zinc-200">
             <div className="leading-tight text-left">
               <div className="text-[10px] uppercase tracking-wider text-zinc-500 font-bold">
                 به‌روزرسانی
