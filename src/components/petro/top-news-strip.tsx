@@ -97,7 +97,7 @@ export default function TopNewsStrip({ breaking, hero }: Props) {
                   <h2 className="mt-1 sm:mt-2 text-[16px] sm:text-[22px] lg:text-[26px] font-bold leading-[27px] sm:leading-[32px] lg:leading-[38px] text-[#171717] line-clamp-2">
                     {hero.title}
                   </h2>
-                  <p className="mt-1.5 sm:mt-2 text-[13px] sm:text-[16px] lg:text-[20px] leading-[24px] sm:leading-[27px] lg:leading-[30px] text-[#77777F] line-clamp-2">
+                  <p className="mt-1.5 sm:mt-2 text-[13px] sm:text-[16px] lg:text-[20px] font-light leading-[24px] sm:leading-[27px] lg:leading-[30px] text-[#77777F] line-clamp-2">
                     {hero.lead}
                   </p>
                   {/* Date + clock — pinned bottom-left */}
