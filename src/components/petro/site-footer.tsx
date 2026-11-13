@@ -52,7 +52,7 @@ export default async function SiteFooter() {
   }
 
   return (
-    <footer className="mt-auto bg-petro-black text-zinc-300 border-t-4 border-blue-700 relative overflow-hidden">
+    <footer className="mt-auto bg-[var(--header-footer-bg)] text-zinc-300 border-t-4 border-blue-700 relative overflow-hidden">
       {/* Decorative glow */}
       <div className="absolute top-0 right-1/3 w-96 h-96 bg-blue-900/20 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute bottom-0 left-1/3 w-96 h-96 bg-blue-950/30 rounded-full blur-3xl pointer-events-none"></div>
@@ -76,7 +76,7 @@ export default async function SiteFooter() {
             <input
               type="email"
               placeholder="ایمیل شما..."
-              className="bg-zinc-900/80 backdrop-blur-sm border border-zinc-700 rounded-lg px-3 sm:px-4 py-2.5 text-xs sm:text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 flex-1 transition-all"
+              className="bg-[var(--header-footer-bg)] backdrop-blur-sm border border-zinc-700 rounded-lg px-3 sm:px-4 py-2.5 text-xs sm:text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 flex-1 transition-all"
               dir="rtl"
             />
             <button
@@ -197,7 +197,7 @@ export default async function SiteFooter() {
       </div>
 
       {/* Copyright bar */}
-      <div className="relative border-t border-zinc-800/80 bg-black/40 backdrop-blur-sm">
+      <div className="relative border-t border-zinc-800/80 bg-[var(--header-footer-bg)] backdrop-blur-sm">
         <div className="max-w-[1440px] mx-auto px-4 lg:px-6 py-3 sm:py-4 flex flex-col md:flex-row items-center justify-between gap-2 text-[10px] sm:text-xs text-zinc-500">
           <div className="flex items-center gap-1.5 text-center">
             <span>© {new Date().getFullYear()} پایگاه خبری بیمه نیوز</span>

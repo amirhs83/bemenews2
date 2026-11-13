@@ -32,7 +32,7 @@ export default function SiteHeader({ navItems }: { navItems?: NavItem[] }) {
   return (
     <header className="sticky top-0 z-50">
       {/* Top utility bar */}
-      <div className="bg-petro-black text-white">
+      <div className="bg-[var(--header-footer-bg)] text-white">
         <div className="max-w-[1440px] mx-auto px-4 lg:px-6">
           <div className="flex items-center justify-between h-9 text-xs">
             <div className="hidden md:flex items-center gap-3 text-zinc-400">
@@ -71,7 +71,7 @@ export default function SiteHeader({ navItems }: { navItems?: NavItem[] }) {
       </div>
 
       {/* Main brand bar */}
-      <div className={`bg-petro-black text-white transition-all duration-300 ${scrolled ? "py-3" : "py-4 sm:py-5"}`}>
+      <div className={`bg-[var(--header-footer-bg)] text-white transition-all duration-300 ${scrolled ? "py-3" : "py-4 sm:py-5"}`}>
         <div className="max-w-[1440px] mx-auto px-4 lg:px-6">
           {/* ===== Mobile row (logo left — hamburger+search right) ===== */}
           <div className="flex lg:hidden items-center justify-between">
@@ -118,7 +118,7 @@ export default function SiteHeader({ navItems }: { navItems?: NavItem[] }) {
                 <input
                   type="search"
                   placeholder="جستجوی اخبار، تحلیل‌ها، گزارش‌ها..."
-                  className="w-full bg-zinc-900/80 border border-zinc-800 rounded-md text-sm px-4 py-2.5 pl-10 text-white placeholder-zinc-500 focus:outline-none focus:border-blue-500 focus:bg-zinc-900 focus:ring-2 focus:ring-blue-500/20 transition-all"
+                  className="w-full bg-[var(--header-footer-bg)] border border-zinc-800 rounded-md text-sm px-4 py-2.5 pl-10 text-white placeholder-zinc-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
                 />
                 <button
                   className="absolute left-1.5 top-1/2 -translate-y-1/2 w-7 h-7 flex items-center justify-center rounded bg-zinc-800 hover:bg-blue-600 text-zinc-400 hover:text-white transition-colors"
@@ -158,7 +158,7 @@ export default function SiteHeader({ navItems }: { navItems?: NavItem[] }) {
             className="absolute right-0 top-0 h-full w-[300px] bg-white shadow-2xl overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="bg-petro-black text-white p-5 flex items-center justify-between">
+            <div className="bg-[var(--header-footer-bg)] text-white p-5 flex items-center justify-between">
               <Image src="/bimenews-logo-white-header.png" alt="بیمه نیوز - BimeNews" width={130} height={70} className="h-8 w-auto" />
               <button
                 onClick={() => setMobileOpen(false)}
