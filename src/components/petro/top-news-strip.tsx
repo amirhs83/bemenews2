@@ -98,8 +98,9 @@ export default function TopNewsStrip({ breaking, hero }: Props) {
 
                 {/* Text body */}
                 <div className={`flex flex-1 flex-col px-4 sm:px-5 lg:px-6 pb-3 sm:pb-3.5 ${styles.txtBody}`}>
-                  {/* روتیتر — only when the post actually has one (mobile variant) */}
-                  {hero.kicker ? <div className={styles.rutitr}>{hero.kicker}</div> : null}
+                  {/* روتیتر — only when the post actually has one (mobile variant).
+                      null / undefined / empty / whitespace-only are treated as empty. */}
+                  {hero.kicker?.trim() ? <div className={styles.rutitr}>{hero.kicker}</div> : null}
                   <h2
                     className={`mt-1 sm:mt-2 text-[16px] sm:text-[22px] lg:text-[26px] font-bold leading-[27px] sm:leading-[32px] lg:leading-[38px] text-[#171717] line-clamp-2 ${styles.heroTitle}`}
                   >

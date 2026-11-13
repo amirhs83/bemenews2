@@ -13,7 +13,8 @@ export default function MultimediaSection({ items }: { items: HomePost[] }) {
   const p4 = items[4];
   const wide = items.slice(5, 7);
 
-  const subtitle = (p: HomePost) => p.kicker ?? "گزارش تصویری";
+  // NOTE: overline (kicker) is intentionally NOT rendered on these cards —
+  // it is exclusive to the first homepage hero news on mobile.
 
   return (
     <section className="bg-zinc-50 border-b border-zinc-200">
@@ -63,7 +64,7 @@ export default function MultimediaSection({ items }: { items: HomePost[] }) {
                   {featured.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-zinc-300 mt-1.5">
-                  {subtitle(featured)}
+                  گزارش تصویری
                 </p>
               </div>
             </a>
@@ -191,7 +192,7 @@ export default function MultimediaSection({ items }: { items: HomePost[] }) {
                     {p.title}
                   </h4>
                   <p className="text-[11px] sm:text-xs text-zinc-300 mt-1">
-                    {subtitle(p)}
+                    گزارش تصویری
                   </p>
                 </div>
               </a>

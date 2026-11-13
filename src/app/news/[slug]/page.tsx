@@ -197,11 +197,6 @@ export default async function NewsPage({ params }: Params) {
 
           {/* Header */}
           <header className="mb-6">
-            {post.kicker && (
-              <div className="text-blue-700 font-bold text-sm mb-2">
-                {post.kicker}
-              </div>
-            )}
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-[1.4] text-zinc-950 mb-4">
               {post.title}
             </h1>

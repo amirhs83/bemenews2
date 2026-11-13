@@ -46,11 +46,15 @@
     display: none;
   }
 
-  /* Text block edges align with the photo edges (reference: 5px inset) */
+  /* Shared horizontal inner padding for the WHOLE text content
+     (overline, headline, lead, date/time) — equal on both sides (~4%
+     of the box width, per the reference guideline lines).
+     border-box sizing is guaranteed globally by Tailwind's preflight. */
   a.flatRoot .txtBody {
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-inline: 15px;
     padding-bottom: 10px;
+    min-width: 0;
+    max-width: 100%;
   }
 
   /* روتیتر — above the headline: black, centered, regular 13px/21px */
