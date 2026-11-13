@@ -1,5 +1,6 @@
 import { Clock, Flame } from "lucide-react";
 import SmartImage from "./smart-image";
+import styles from "./top-news-strip.module.css";
 import type { HomePost } from "@/lib/home-data";
 
 interface Props {
@@ -65,15 +66,16 @@ export default function TopNewsStrip({ breaking, hero }: Props) {
           {/* Featured photo (left side in RTL) */}
           {hero && (
             <div className="lg:col-span-6 order-1 lg:order-2">
-              {/* Hero card — white reference card on ALL breakpoints.
-                  Same site font (IRANSans), reference type scale,
-                  inset photo with sharp 90° corners. */}
+              {/* Hero card — white reference card on sm+ (unchanged).
+                  On mobile only, a flat Entekhab-style lead story via the
+                  scoped `flatRoot` modifier (see top-news-strip.module.css).
+                  Same site font (IRANSans), inset photo with sharp 90° corners. */}
               <a
                 href={hero.href ?? "#"}
-                className="flex relative flex-col overflow-hidden rounded-[14px] border border-[#ECECF0] bg-white"
+                className={`flex relative flex-col overflow-hidden rounded-[14px] border border-[#ECECF0] bg-white ${styles.flatRoot}`}
               >
                 {/* Photo — inset inside the card, sharp 90° corners */}
-                <div className="p-2.5 sm:p-3 shrink-0">
+                <div className={`p-2.5 sm:p-3 shrink-0 ${styles.imgWrap}`}>
                   <div className="relative">
                     <SmartImage
                       src={hero.imageUrl}
@@ -82,28 +84,39 @@ export default function TopNewsStrip({ breaking, hero }: Props) {
                       category={hero.categoryKey}
                       priority
                       sizes="(max-width: 1024px) 100vw, 660px"
-                      className="aspect-[19/10] lg:aspect-[2/1] w-full"
+                      className={`aspect-[19/10] lg:aspect-[2/1] w-full ${styles.heroImg}`}
                     />
 
                     {/* «ویژه» badge — top-right of the photo, small size */}
-                    <span className="absolute top-2 right-2 sm:top-2.5 sm:right-2.5 lg:top-3 lg:right-3 bg-[#E00018] text-white text-[12px] sm:text-[13px] lg:text-[15px] font-bold leading-[16px] sm:leading-[18px] lg:leading-[20px] px-2 sm:px-2.5 lg:px-3.5 py-0.5 sm:py-1 rounded-[5px] sm:rounded-[6px] lg:rounded-[7px]">
+                    <span
+                      className={`absolute top-2 right-2 sm:top-2.5 sm:right-2.5 lg:top-3 lg:right-3 bg-[#E00018] text-white text-[12px] sm:text-[13px] lg:text-[15px] font-bold leading-[16px] sm:leading-[18px] lg:leading-[20px] px-2 sm:px-2.5 lg:px-3.5 py-0.5 sm:py-1 rounded-[5px] sm:rounded-[6px] lg:rounded-[7px] ${styles.heroBadge}`}
+                    >
                       ویژه
                     </span>
                   </div>
                 </div>
 
                 {/* Text body */}
-                <div className="flex flex-1 flex-col px-4 sm:px-5 lg:px-6 pb-3 sm:pb-3.5">
-                  <h2 className="mt-1 sm:mt-2 text-[16px] sm:text-[22px] lg:text-[26px] font-bold leading-[27px] sm:leading-[32px] lg:leading-[38px] text-[#171717] line-clamp-2">
+                <div className={`flex flex-1 flex-col px-4 sm:px-5 lg:px-6 pb-3 sm:pb-3.5 ${styles.txtBody}`}>
+                  {/* روتیتر — only when the post actually has one (mobile variant) */}
+                  {hero.kicker ? <div className={styles.rutitr}>{hero.kicker}</div> : null}
+                  <h2
+                    className={`mt-1 sm:mt-2 text-[16px] sm:text-[22px] lg:text-[26px] font-bold leading-[27px] sm:leading-[32px] lg:leading-[38px] text-[#171717] line-clamp-2 ${styles.heroTitle}`}
+                  >
                     {hero.title}
                   </h2>
-                  <p className="mt-1.5 sm:mt-2 text-[13px] sm:text-[16px] lg:text-[20px] font-light leading-[24px] sm:leading-[27px] lg:leading-[30px] text-[#77777F] line-clamp-2">
+                  <p
+                    className={`mt-1.5 sm:mt-2 text-[13px] sm:text-[16px] lg:text-[20px] font-light leading-[24px] sm:leading-[27px] lg:leading-[30px] text-[#77777F] line-clamp-2 ${styles.heroLead}`}
+                  >
                     {hero.lead}
                   </p>
-                  {/* Date + clock — pinned bottom-left */}
-                  <div className="mt-auto flex items-center justify-end gap-1.5 lg:gap-2 pt-3 lg:pt-4 text-[12px] lg:text-[14px] text-zinc-400">
+                  {/* Date + clock — pinned bottom-left (time added on mobile variant only) */}
+                  <div
+                    className={`mt-auto flex items-center justify-end gap-1.5 lg:gap-2 pt-3 lg:pt-4 text-[12px] lg:text-[14px] text-zinc-400 ${styles.heroMeta}`}
+                  >
                     <Clock className="w-[15px] h-[15px] lg:w-[17px] lg:h-[17px] shrink-0" strokeWidth={1.5} />
                     <span className="tabular-nums">{hero.date}</span>
+                    <span className={`tabular-nums ${styles.metaTime}`}>{hero.time}</span>
                   </div>
                 </div>
               </a>
