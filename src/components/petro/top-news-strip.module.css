@@ -57,14 +57,21 @@
     max-width: 100%;
   }
 
-  /* روتیتر — above the headline: black, centered, regular 13px/21px */
+  /* روتیتر — above the headline: black, regular 13px/21px.
+     Same box edges as headline/lead (shared padding-inline from .txtBody);
+     text starts at the same edge as the justified headline/lead.
+     Hard one-line cap: overflow is clipped with an ellipsis (…) at the
+     line end — the LEFT side in RTL, where the sentence continues. */
   a.flatRoot .rutitr {
     display: block;
     font-size: 13px;
     line-height: 21px;
     font-weight: 400;
     color: #000;
-    text-align: center;
+    text-align: justify;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   /* Headline — dark news blue #03349B, bold, JUSTIFIED exactly like the lead
@@ -81,17 +88,20 @@
     text-align: justify;
   }
 
-  /* Lead — newspaper style: black, justified, Light 300, full text (no clamp) */
+  /* Lead — newspaper style: black, justified, Light 300, full text (no clamp).
+     Slightly tighter word gaps (-0.5px) keep justified lines compact;
+     a small 4px gap below the headline separates the two blocks. */
   a.flatRoot .heroLead {
     display: block;
     overflow: visible;
     -webkit-box-orient: unset;
     -webkit-line-clamp: unset;
-    margin-top: 0;
+    margin-top: 4px;
     font-size: 13px;
     line-height: 25px;
     color: #000;
     text-align: justify;
+    word-spacing: -0.5px;
   }
 
   /* Metadata — small and quiet, bottom-left: time leftmost, then date */
