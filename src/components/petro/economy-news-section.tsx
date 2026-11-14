@@ -18,7 +18,7 @@ export default function EconomyNewsSection({ items, mostViewed }: Props) {
           <div className="lg:col-span-8">
             <div className="border-b-2 border-petro-black pb-2 mb-4 sm:mb-4 flex items-end justify-between relative">
               <div className="flex items-end gap-2 sm:gap-3">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center shadow-md mb-1">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-[var(--header-footer-bg)] flex items-center justify-center shadow-md mb-1">
                   <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 </div>
                 <div>
@@ -60,7 +60,7 @@ export default function EconomyNewsSection({ items, mostViewed }: Props) {
                         {item.date}
                       </span>
                     </div>
-                    <h3 className="font-bold text-sm sm:text-base lg:text-lg text-zinc-900 group-hover:text-blue-700 transition-colors leading-relaxed mb-1 sm:mb-1.5 line-clamp-2">
+                    <h3 className="font-bold text-sm sm:text-base lg:text-lg text-[#03349b] group-hover:text-blue-700 transition-colors leading-relaxed mb-1 sm:mb-1.5 line-clamp-2">
                       {item.title}
                     </h3>
                     {item.lead && (
@@ -78,7 +78,7 @@ export default function EconomyNewsSection({ items, mostViewed }: Props) {
           <aside className="lg:col-span-4 space-y-4 sm:space-y-5">
             {/* Most read */}
             <div className="bg-white border border-zinc-200 rounded-xl overflow-hidden shadow-sm">
-              <div className="bg-gradient-to-l from-petro-black to-zinc-900 text-white px-4 py-3 flex items-center gap-2">
+              <div className="bg-[var(--header-footer-bg)] text-white px-4 py-3 flex items-center gap-2">
                 <div className="w-7 h-7 rounded-md bg-orange-500/20 flex items-center justify-center">
                   <Flame className="w-4 h-4 text-orange-400" />
                 </div>
@@ -98,12 +98,9 @@ export default function EconomyNewsSection({ items, mostViewed }: Props) {
                       {faDigits(idx + 1)}
                     </span>
                     <div className="flex-1 min-w-0">
-                      <h4 className="text-[13px] sm:text-sm font-medium text-zinc-800 group-hover:text-blue-700 transition-colors leading-snug line-clamp-2">
+                      <h4 className="text-[13px] sm:text-sm font-medium text-[#03349b] group-hover:text-blue-700 transition-colors leading-snug line-clamp-2">
                         {item.title}
                       </h4>
-                      <div className="text-[10px] text-zinc-400 mt-1">
-                        {item.views} بازدید
-                      </div>
                     </div>
                   </a>
                 ))}
@@ -112,7 +109,7 @@ export default function EconomyNewsSection({ items, mostViewed }: Props) {
 
             {/* Mini subscribe widget */}
             <div className="bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-xl p-5 text-center">
-              <div className="w-10 h-10 mx-auto rounded-lg bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center shadow-md mb-2">
+              <div className="w-10 h-10 mx-auto rounded-lg bg-[var(--header-footer-bg)] flex items-center justify-center shadow-md mb-2">
                 <Mail className="w-5 h-5 text-white" />
               </div>
               <h4 className="font-bold text-sm mb-1">خبرنامه روزانه</h4>
@@ -121,7 +118,7 @@ export default function EconomyNewsSection({ items, mostViewed }: Props) {
               </p>
               <a
                 href="/#newsletter"
-                className="inline-block text-xs bg-blue-600 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded-md transition-colors"
+                className="inline-block text-xs bg-[var(--header-footer-bg)] hover:bg-zinc-800 text-white font-bold px-4 py-2 rounded-md transition-colors"
               >
                 عضویت رایگان
               </a>

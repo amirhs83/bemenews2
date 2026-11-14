@@ -125,7 +125,7 @@ export default function MultimediaSection({ items }: { items: HomePost[] }) {
                     />
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent pointer-events-none"></div>
-                  <div className="absolute top-2.5 right-2.5 flex items-center gap-1 bg-blue-600 text-white text-[8px] sm:text-[9px] font-bold px-1.5 py-0.5 rounded">
+                  <div className="absolute top-2.5 right-2.5 flex items-center gap-1 bg-[var(--header-footer-bg)] text-white text-[8px] sm:text-[9px] font-bold px-1.5 py-0.5 rounded">
                     <Film className="w-2.5 h-2.5" />
                     فیلم
                   </div>

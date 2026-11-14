@@ -121,7 +121,7 @@ export default function SiteHeader({ navItems }: { navItems?: NavItem[] }) {
                   className="w-full bg-[var(--header-footer-bg)] border border-zinc-800 rounded-md text-sm px-4 py-2.5 pl-10 text-white placeholder-zinc-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
                 />
                 <button
-                  className="absolute left-1.5 top-1/2 -translate-y-1/2 w-7 h-7 flex items-center justify-center rounded bg-zinc-800 hover:bg-blue-600 text-zinc-400 hover:text-white transition-colors"
+                  className="absolute left-1.5 top-1/2 -translate-y-1/2 w-7 h-7 flex items-center justify-center rounded bg-zinc-800 hover:bg-zinc-700 text-zinc-400 hover:text-white transition-colors"
                   aria-label="جستجو"
                 >
                   <Search className="w-3.5 h-3.5" />
@@ -139,7 +139,7 @@ export default function SiteHeader({ navItems }: { navItems?: NavItem[] }) {
               </div>
               <a
                 href="/contact"
-                className="hidden lg:inline-flex items-center gap-1.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-4 py-2 rounded-md transition-colors shadow-lg shadow-blue-600/20"
+                className="hidden lg:inline-flex items-center gap-1.5 bg-[var(--header-footer-bg)] border border-zinc-500 hover:border-zinc-300 hover:bg-zinc-900 text-white text-xs font-bold px-4 py-2 rounded-md transition-colors"
               >
                 عضویت ویژه
               </a>
@@ -194,7 +194,7 @@ export default function SiteHeader({ navItems }: { navItems?: NavItem[] }) {
               </ul>
               <a
                 href="/contact"
-                className="block mt-4 bg-blue-600 hover:bg-blue-500 text-white text-center font-bold py-2.5 rounded-md transition-colors"
+                className="block mt-4 bg-[var(--header-footer-bg)] hover:bg-zinc-800 text-white text-center font-bold py-2.5 rounded-md transition-colors"
               >
                 عضویت ویژه
               </a>

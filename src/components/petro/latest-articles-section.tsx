@@ -25,7 +25,7 @@ export default function LatestArticlesSection({ items }: { items: HomePost[] }) 
                 تبلیغات شماست.
               </p>
             </div>
-            <div className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-bold px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg transition-colors whitespace-nowrap shadow-lg shadow-blue-600/30">
+            <div className="inline-flex items-center gap-2 bg-[var(--header-footer-bg)] border border-zinc-600 hover:border-zinc-400 hover:bg-zinc-900 text-white text-xs sm:text-sm font-bold px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg transition-colors whitespace-nowrap">
               درخواست تبلیغات
               <ArrowLeft className="w-4 h-4" />
             </div>
@@ -76,7 +76,7 @@ export default function LatestArticlesSection({ items }: { items: HomePost[] }) 
                 </div>
               </div>
               <div className="flex-1 min-w-0 p-3 sm:p-4 flex flex-col justify-center sm:justify-start">
-                <h3 className="font-bold text-sm sm:text-base text-zinc-900 group-hover:text-blue-700 transition-colors leading-relaxed mb-1 sm:mb-2 line-clamp-2 sm:line-clamp-3">
+                <h3 className="font-bold text-sm sm:text-base text-[#03349b] group-hover:text-blue-700 transition-colors leading-relaxed mb-1 sm:mb-2 line-clamp-2 sm:line-clamp-3">
                   {article.title}
                 </h3>
                 <p className="text-[11px] sm:text-xs text-zinc-600 leading-relaxed line-clamp-1 sm:line-clamp-2 mb-0 sm:mb-3 hidden sm:block">
@@ -126,7 +126,7 @@ export default function LatestArticlesSection({ items }: { items: HomePost[] }) 
             />
             <button
               type="submit"
-              className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-bold px-4 sm:px-6 py-2 sm:py-2.5 text-xs sm:text-sm rounded-lg transition-all whitespace-nowrap shadow-lg shadow-blue-600/30"
+              className="bg-[var(--header-footer-bg)] border border-zinc-600 hover:border-zinc-400 hover:bg-zinc-900 text-white font-bold px-4 sm:px-6 py-2 sm:py-2.5 text-xs sm:text-sm rounded-lg transition-all whitespace-nowrap"
             >
               عضویت رایگان
             </button>

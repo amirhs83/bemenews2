@@ -263,7 +263,8 @@
 
 /* ============ Breaking news badge ============ */
 .breaking-badge {
-  background: linear-gradient(135deg, #000 0%, #18181b 100%);
+  /* exact header chrome color — same var consumed by site-header/site-footer */
+  background: var(--header-footer-bg);
   color: #fff;
   padding: 8px 18px;
   font-weight: 700;

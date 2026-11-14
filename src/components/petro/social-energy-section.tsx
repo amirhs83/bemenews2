@@ -65,7 +65,7 @@ function SubscribeBox() {
 
       <div className="relative">
         <div className="flex items-center gap-2 mb-2">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center shadow-md">
+          <div className="w-8 h-8 rounded-lg bg-[var(--header-footer-bg)] flex items-center justify-center shadow-md">
             <Mail className="w-4 h-4 text-white" />
           </div>
           <h3 className="font-bold text-base">عضویت در خبرنامه</h3>
@@ -93,7 +93,7 @@ function SubscribeBox() {
             <button
               type="submit"
               disabled={!agreed}
-              className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 disabled:from-zinc-300 disabled:to-zinc-300 disabled:cursor-not-allowed text-white font-bold py-2.5 rounded-lg transition-all flex items-center justify-center gap-2 shadow-md disabled:shadow-none"
+              className="w-full bg-[var(--header-footer-bg)] hover:bg-zinc-800 disabled:hover:bg-[var(--header-footer-bg)] disabled:from-zinc-300 disabled:to-zinc-300 disabled:bg-zinc-300 disabled:cursor-not-allowed text-white font-bold py-2.5 rounded-lg transition-all flex items-center justify-center gap-2 shadow-md disabled:shadow-none"
             >
               <Send className="w-4 h-4" />
               عضویت در خبرنامه
@@ -206,7 +206,7 @@ export default function SocialEnergySection({ items }: { items: HomePost[] }) {
                         {item.date}
                       </span>
                     </div>
-                    <h3 className="font-bold text-[13px] sm:text-sm text-zinc-900 group-hover:text-blue-700 transition-colors leading-relaxed mb-1 sm:mb-1.5 line-clamp-2">
+                    <h3 className="font-bold text-[13px] sm:text-sm text-[#03349b] group-hover:text-blue-700 transition-colors leading-relaxed mb-1 sm:mb-1.5 line-clamp-2">
                       {item.title}
                     </h3>
                     <p className="text-[11px] sm:text-xs text-zinc-500 line-clamp-2 leading-relaxed">

@@ -81,7 +81,7 @@ export default async function SiteFooter() {
             />
             <button
               type="submit"
-              className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-bold px-4 sm:px-5 py-2.5 text-xs sm:text-sm rounded-lg whitespace-nowrap transition-all shadow-lg shadow-blue-600/30 flex items-center gap-1.5"
+              className="bg-[var(--header-footer-bg)] border border-zinc-600 hover:border-zinc-400 hover:bg-zinc-900 text-white font-bold px-4 sm:px-5 py-2.5 text-xs sm:text-sm rounded-lg whitespace-nowrap transition-all flex items-center gap-1.5"
             >
               <Send className="w-3.5 h-3.5" />
               عضویت

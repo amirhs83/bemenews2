@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { db } from "@/lib/db";
 import { decodeParam } from "@/lib/url-param";
 import { absoluteUrl, postUrl, rssAlternates, siteName } from "@/lib/site";
-import { faDate, faTime, faViews, faDuration } from "@/lib/post-format";
+import { faDate, faTime, faDuration } from "@/lib/post-format";
 import { getHomeSectionPosts, getNavCategories } from "@/lib/home-data";
 import SiteHeader from "@/components/petro/site-header";
 import CommodityTicker from "@/components/petro/commodity-ticker";
@@ -15,7 +15,6 @@ import SmartImage from "@/components/petro/smart-image";
 import {
   ChevronLeft,
   Clock,
-  Eye,
   Tag,
   Calendar,
   ArrowLeft,
@@ -228,10 +227,6 @@ export default async function NewsPage({ params }: Params) {
                 <span className="inline-flex items-center gap-1 tabular-nums">
                   <Clock className="w-3.5 h-3.5" />
                   {faTime(publishedAt)}
-                </span>
-                <span className="inline-flex items-center gap-1 tabular-nums">
-                  <Eye className="w-3.5 h-3.5" />
-                  {faViews(post.views)} بازدید
                 </span>
               </div>
               <ShareButtons url={canonical} title={post.title} />

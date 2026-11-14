@@ -47,7 +47,7 @@ export default function TopNewsStrip({ breaking, hero }: Props) {
                     />
                   </div>
                   <div className="flex-1 min-w-0 flex flex-col">
-                    <h3 className="font-bold text-[13px] sm:text-[15px] text-zinc-900 group-hover:text-blue-700 transition-colors leading-relaxed">
+                    <h3 className="font-bold text-[13px] sm:text-[15px] text-[#03349b] group-hover:text-blue-700 transition-colors leading-relaxed">
                       «{item.title}»
                     </h3>
                     {/* Persian time + date — BELOW the title, pinned bottom-left:
@@ -102,7 +102,7 @@ export default function TopNewsStrip({ breaking, hero }: Props) {
                       null / undefined / empty / whitespace-only are treated as empty. */}
                   {hero.kicker?.trim() ? <div className={styles.rutitr}>{hero.kicker}</div> : null}
                   <h2
-                    className={`mt-1 sm:mt-2 text-[16px] sm:text-[22px] lg:text-[26px] font-bold leading-[27px] sm:leading-[32px] lg:leading-[38px] text-[#171717] line-clamp-2 ${styles.heroTitle}`}
+                    className={`mt-1 sm:mt-2 text-[16px] sm:text-[22px] lg:text-[26px] font-bold leading-[27px] sm:leading-[32px] lg:leading-[38px] text-[#03349b] line-clamp-2 ${styles.heroTitle}`}
                   >
                     {hero.title}
                   </h2>
