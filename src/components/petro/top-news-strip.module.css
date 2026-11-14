@@ -105,11 +105,12 @@
     word-spacing: -0.5px;
   }
 
-  /* Metadata — small and quiet, bottom-left: time leftmost, then date */
+  /* Metadata — small and very quiet, bottom-left: time leftmost, then date.
+     #a1a1aa (zinc-400) keeps it clearly fainter than the lead text. */
   a.flatRoot .heroMeta {
     padding-top: 10px;
     font-size: 11px;
-    color: #71717a;
+    color: #a1a1aa;
     gap: 4px;
   }
 
