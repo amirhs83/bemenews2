@@ -3,8 +3,7 @@
 import Image from "next/image";
 
 import { useState, useEffect } from "react";
-import { Menu, Search, X, ChevronDown, Bell, Globe } from "lucide-react";
-import { utilityLinks } from "@/lib/news-data";
+import { Menu, Search, X } from "lucide-react";
 import type { NavItem } from "@/lib/home-data";
 
 const fallbackNav: NavItem[] = [{ label: "صفحه اصلی", href: "/", hot: true }];
@@ -31,45 +30,6 @@ export default function SiteHeader({ navItems }: { navItems?: NavItem[] }) {
 
   return (
     <header className="sticky top-0 z-50">
-      {/* Top utility bar */}
-      <div className="bg-[var(--header-footer-bg)] text-white">
-        <div className="max-w-[1440px] mx-auto px-4 lg:px-6">
-          <div className="flex items-center justify-between h-9 text-xs">
-            <div className="hidden md:flex items-center gap-3 text-zinc-400">
-              <span className="inline-flex items-center gap-1.5">
-                <span className="live-dot"></span>
-                <span className="font-medium">پخش زنده</span>
-              </span>
-              <span className="text-zinc-700">·</span>
-              <span>{dateStr}</span>
-            </div>
-            <nav className="flex items-center gap-5 overflow-x-auto scrollbar-hidden">
-              {utilityLinks.map((link, i) => (
-                <a
-                  key={i}
-                  href={link.href}
-                  className={`whitespace-nowrap text-zinc-300 hover:text-white transition-colors relative group ${
-                    link.fa ? "" : "tracking-wide uppercase text-[10px] font-semibold"
-                  }`}
-                >
-                  {link.label}
-                  <span className="absolute -bottom-0.5 right-0 left-0 h-px bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-right"></span>
-                </a>
-              ))}
-            </nav>
-            <div className="hidden md:flex items-center gap-3">
-              <button className="text-zinc-400 hover:text-white transition-colors" aria-label="اعلان‌ها">
-                <Bell className="w-3.5 h-3.5" />
-              </button>
-              <button className="inline-flex items-center gap-1 text-[11px] text-zinc-300 hover:text-white border border-zinc-800 px-2 py-0.5 transition-colors">
-                <Globe className="w-3 h-3" />
-                FA <ChevronDown className="w-2.5 h-2.5" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Main brand bar */}
       <div className={`bg-[var(--header-footer-bg)] text-white transition-all duration-300 ${scrolled ? "py-3" : "py-4 sm:py-5"}`}>
         <div className="max-w-[1440px] mx-auto px-4 lg:px-6">
