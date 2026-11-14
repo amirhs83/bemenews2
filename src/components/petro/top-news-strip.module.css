@@ -90,15 +90,16 @@
 
   /* Lead — newspaper style: black, justified, Light 300, full text (no clamp).
      Slightly tighter word gaps (-0.5px) keep justified lines compact;
-     a small 4px gap below the headline separates the two blocks. */
+     an 8px gap below the headline clearly separates the two blocks;
+     line-height 23px keeps the lead lines a bit closer together. */
   a.flatRoot .heroLead {
     display: block;
     overflow: visible;
     -webkit-box-orient: unset;
     -webkit-line-clamp: unset;
-    margin-top: 4px;
+    margin-top: 8px;
     font-size: 13px;
-    line-height: 25px;
+    line-height: 23px;
     color: #000;
     text-align: justify;
     word-spacing: -0.5px;
